@@ -1,0 +1,76 @@
+.hero {
+  background: url('../src/assets/images/hero_img.jpg') no-repeat center center;
+  background-size: cover;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px #000;
+}
+
+.category-img,
+.promo-img {
+  width: 100%;
+  height: auto;
+}
+
+.bg-footer {
+  background: #D3EFEA;
+}
+
+.small {
+  font-size: 12px;
+}
+
+.copyright {
+  font-size: 12px;
+}
+
+.footer-nav-title {
+  color: #262626;
+}
+.card-title{
+  font-size: 24px;
+  color: #262626;
+  font-weight: normal;
+}
+.readmore a{
+  color: #262626;
+  font-size: 12px;
+  text-decoration: underline;
+}
+
+.image-zoom-effect {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.image-zoom-effect .image-holder {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  transform: scale(1);
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.image-zoom-effect:hover .image-holder {
+  transform: scale(0.95);
+}
+
+.image-zoom-effect img {
+  transform: scale(1);
+  will-change: transform;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 0;
+}
+
+.image-zoom-effect:hover img {
+  transform: scale(1.1);
+}

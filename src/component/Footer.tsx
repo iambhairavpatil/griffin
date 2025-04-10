@@ -19,8 +19,7 @@ const Footer: React.FC = () => {
                                     <h6 className="fw-bold footer-nav-title">Company</h6>
                                     <ul className="list-unstyled small">
                                         <li><a href="#" className="text-muted text-decoration-none">Our Story</a></li>
-                                        <li><a href="#" className="text-muted text-decoration-none">Careers</a></li>
-                                        <li><a href="#" className="text-muted text-decoration-none">Sustainability</a></li>
+                                        <li><a href="#" className="text-muted text-decoration-none">Careers</a></li>                                        
                                     </ul>
                                 </div>
 

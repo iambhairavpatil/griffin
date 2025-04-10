@@ -10,6 +10,9 @@ import Testimonials from './component/Testimonials';
 import Ourholiday from './component/Ourholiday';
 import Shipping from './component/Shipping';
 import Footer from './component/Footer';
+import ProductDetails from './component/ProductListing'; // ✅ Import new page
+import ProductListing from './component/ProductListing';
+import CategoryListing from './component/CategoryListing';
 
 function App() {
   return (
@@ -36,9 +39,17 @@ function App() {
             </>
           }
         />
+
         <Route path="/about" element={<About />} />
+
+        {/* ✅ Product Details Page */}
+        <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="/category/:categoryName" element={<ProductListing />} /> 
+        <Route path="/category/:slug" element={<CategoryListing />} />
+        {/* 404 Page */}
         <Route path="*" element={<div>Page Not Found</div>} />
       </Routes>
+
       <Footer />
     </div>
   );

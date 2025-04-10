@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import ProductCard from "./ProductCard";
+import ProductCard from "../component/ProductCard";
 
 
 const products = [

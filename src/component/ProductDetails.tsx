@@ -4,16 +4,16 @@ import { Link, useParams } from "react-router-dom";
 
 const ProductDetails: React.FC = () => {
   const [mainImage, setMainImage] = useState(
-    "https://media.istockphoto.com/id/1479137255/photo/perfume.webp?a=1&b=1&s=612x612&w=0&k=20&c=tfmXuSw2IpnxopLpli7V1I3pkKW58VHBS0FO6waNdD8="
+    "../src/assets/images/p1.jpg",
   );
   const [quantity, setQuantity] = useState(1);
 
   const thumbnails = [
-    "https://media.istockphoto.com/id/1479137255/photo/perfume.webp?a=1&b=1&s=612x612&w=0&k=20&c=tfmXuSw2IpnxopLpli7V1I3pkKW58VHBS0FO6waNdD8=",
-    "https://media.istockphoto.com/id/1431250620/photo/man-applying-cologne-eau-de-toilette-on-neck.webp?a=1&b=1&s=612x612&w=0&k=20&c=dIoJ_vJes2c-LSCR6_Y40Ex_Td4zf6quUNV9pKmQwas=",
-    "https://plus.unsplash.com/premium_photo-1679064286615-e5e4d4940dfc?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1590736704728-f4730bb30770?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1547887537-6158d64c35b3?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    "../src/assets/images/p2.jpg",
+    "../src/assets/images/p3.jpg",
+    "../src/assets/images/p4.jpg",
+    "../src/assets/images/p5.jpg",
+    "../src/assets/images/p6.jpg",
   ];
   // const { id } = useParams();
   const compare_icon = "../src/assets/images/compare_ico.png";
@@ -25,7 +25,6 @@ const ProductDetails: React.FC = () => {
     category: "Perfume"
   };
   const breadcrumbCategory = product.category.toLowerCase();
-
   const breadcrumbTitle = product.title;
   return (
     <div>
@@ -114,7 +113,7 @@ const ProductDetails: React.FC = () => {
               </div>
             </div>
 
-            <div className="mb-4">
+            <div className="mb-4 col-3">
               <label htmlFor="quantity" className="form-label">Quantity:</label>
               <input
                 type="number"
@@ -130,9 +129,9 @@ const ProductDetails: React.FC = () => {
               <i className="bi bi-cart-plus"></i> Add to Cart
             </button>
 
-            <button className="btn btn-outline-secondary btn-lg mb-3">
+            {/* <button className="btn btn-outline-secondary btn-lg mb-3">
               <i className="bi bi-heart"></i> Add to Wishlist
-            </button>
+            </button> */}
 
             <div className="mt-4 mb-4">
               <span className="p-3 inline-block"><img src={compare_icon} alt={`icons`} /> Compare</span>

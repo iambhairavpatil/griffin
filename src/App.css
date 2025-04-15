@@ -3,7 +3,7 @@ body {
 }
 
 .hero {
-  background: url('../src/assets/images/hero_img.jpg') no-repeat center center;
+  background: url('../src/assets/images/p8.jpg') no-repeat center center;
   background-size: cover;
   min-height: 90vh;
   display: flex;

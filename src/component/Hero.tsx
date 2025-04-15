@@ -5,8 +5,8 @@ const Hero: React.FC = () => {
         <>
             <section className="hero">
                 <div>
-                    <h1>Fragrance</h1>
-                    <p className="lead">The Griffin Original</p>
+                    {/* <h1>Fragrance</h1>
+                    <p className="lead">The Griffin Original</p> */}
                 </div>
             </section>
 

@@ -12,6 +12,8 @@ import Shipping from './component/Shipping';
 import Footer from './component/Footer';
 import ProductDetails from './component/ProductDetails'; // ✅ Corrected
 import ProductListing from './component/ProductListing';
+import WomenCategory from './component/WomenCategory';
+import MenCategory from './component/MenCategory';
 
 function App() {
   return (
@@ -40,6 +42,8 @@ function App() {
         />
 
         <Route path="/About" element={<About />} />
+        <Route path="/WomenCategory" element={<WomenCategory />} />
+        <Route path="/MenCategory" element={<MenCategory />} />
 
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/category/:categoryName" element={<ProductListing />} />

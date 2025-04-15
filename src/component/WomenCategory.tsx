@@ -1,12 +1,12 @@
-const About: React.FC = () => {
+const WomenCategory: React.FC = () => {
     return (
       <div className="container" style={{'height': '50vh'}}>
       <h1>
-         About...
+      WomenCategory...
       </h1>
       
       </div>
     )
   }
   
-  export default About
+  export default WomenCategory

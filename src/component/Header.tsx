@@ -4,11 +4,12 @@ import { RootState } from '../store';
 import { Link } from "react-router-dom";
 
 const navLinks = [
-  { label: "Women", href: "#" },
-  { label: "Men", href: "#" },
-  { label: "About", href: "#" },
-  // { label: "Everworld Stories", href: "#" },
+  { label: "Women", href: "/WomenCategory" },
+  { label: "Men", href: "/MenCategory" },
+  { label: "About", href: "/about" },
 ];
+
+
 
 const categories = [
   "Holiday Gifting",

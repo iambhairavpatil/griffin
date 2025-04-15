@@ -39,7 +39,7 @@ function App() {
           }
         />
 
-        <Route path="/about" element={<About />} />
+        <Route path="/About" element={<About />} />
 
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/category/:categoryName" element={<ProductListing />} />

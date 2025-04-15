@@ -1,12 +1,13 @@
 import React from "react";
 import { useSelector } from 'react-redux';
 import { RootState } from '../store';
+import { Link } from "react-router-dom";
 
 const navLinks = [
   { label: "Women", href: "#" },
   { label: "Men", href: "#" },
   { label: "About", href: "#" },
-  { label: "Everworld Stories", href: "#" },
+  // { label: "Everworld Stories", href: "#" },
 ];
 
 const categories = [
@@ -62,9 +63,9 @@ const Header: React.FC = () => {
           </button>
 
           {/* Logo */}
-          <a className="navbar-brand mx-auto fw-bold fs-5 text-uppercase position-absolute start-50 translate-middle-x" href="#">
+          <Link to={`/`} className="navbar-brand mx-auto fw-bold fs-5 text-uppercase position-absolute start-50 translate-middle-x">
             The Griffin Original
-          </a>
+          </Link>
 
           {/* Icons - Desktop */}
           <div className="d-none d-lg-flex align-items-center gap-3">

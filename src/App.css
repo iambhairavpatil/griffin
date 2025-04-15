@@ -1,3 +1,7 @@
+body {
+  color: #262626;
+}
+
 .hero {
   background: url('../src/assets/images/hero_img.jpg') no-repeat center center;
   background-size: cover;
@@ -36,12 +40,14 @@
 .footer-nav-title {
   color: #262626;
 }
-.card-title{
+
+.card-title {
   font-size: 24px;
   color: #262626;
   font-weight: normal;
 }
-.readmore a{
+
+.readmore a {
   color: #262626;
   font-size: 12px;
   text-decoration: underline;
@@ -73,4 +79,75 @@
 
 .image-zoom-effect:hover img {
   transform: scale(1.1);
+}
+
+.promotion-footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 9999;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #fff;
+  background-color: #000;
+}
+
+.promotion-footer a {
+  color: #cbd5e0;
+  text-decoration: underline;
+}
+
+.promotion-footer a:hover {
+  color: #fff;
+}
+
+.bg-grey {
+  /* background: #FAFAFA; */
+  background: #DADADA;
+}
+
+.card {
+  background: transparent;
+}
+
+.carousel-indicators [data-bs-target] {
+  box-sizing: content-box;
+  flex: 0 1 auto;
+  width: 27px;
+  height: 27px;
+  padding: 0;
+  margin-right: 10px;
+  margin-left: 10px;
+  text-indent: -999px;
+  cursor: pointer;
+  background-color: #B6B6B6;
+  background-clip: padding-box;
+  opacity: 10;
+  transition: opacity .6s ease;
+  border-radius: 50%;
+}
+
+.carousel-indicators .active {
+  border-radius: 50%;
+  border: 10px solid #000000 !important;
+  opacity: .9;
+  position: relative;
+}
+
+.carousel-indicators .active::after {
+  content: "";
+  position: absolute;
+}
+
+.card-img-top {
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  width: auto;
+}
+
+.card-heading {
+  font-size: 16px;
 }

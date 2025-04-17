@@ -10,6 +10,8 @@ const ProductDetails: React.FC = () => {
 
   const { id: productId } = useParams();
   const [product, setProduct] = useState<string[]>([]);
+  const [thumbnails, setThumbnails] = useState<string[]>([]);
+  const [mainimage, setMainimage] = useState<string[]>([]);
 
   useEffect(() => {
 
@@ -42,6 +44,8 @@ const ProductDetails: React.FC = () => {
           console.log(response.data);
           // setPosts(response.data);
           setProduct(response.data)
+          setThumbnails(response.data.images)
+          setMainimage(response.data.images[0].src)
         })
         // .then(res => setProducts(res.data.products))
         .catch(error => {
@@ -61,13 +65,13 @@ const ProductDetails: React.FC = () => {
   );
   const [quantity, setQuantity] = useState(1);
 
-  const thumbnails = [
-    "../src/assets/images/p2.jpg",
-    "../src/assets/images/p3.jpg",
-    "../src/assets/images/p4.jpg",
-    "../src/assets/images/p5.jpg",
-    "../src/assets/images/p6.jpg",
-  ];
+  // const thumbnails = [
+  //   "../src/assets/images/p2.jpg",
+  //   "../src/assets/images/p3.jpg",
+  //   "../src/assets/images/p4.jpg",
+  //   "../src/assets/images/p5.jpg",
+  //   "../src/assets/images/p6.jpg",
+  // ];
   // const { id } = useParams();
   const compare_icon = "../src/assets/images/compare_ico.png";
   const ask_icon = "../src/assets/images/ask_icon.png";
@@ -101,10 +105,10 @@ const ProductDetails: React.FC = () => {
               {thumbnails.map((thumb, index) => (
                 <img
                   key={index}
-                  src={thumb}
+                  src={thumb.src}
                   alt={`Thumbnail ${index + 1}`}
                   className={`thumbnail rounded ${mainImage === thumb ? "border border-primary" : ""}`}
-                  onClick={() => setMainImage(thumb)}
+                  onClick={() => setMainImage(thumb.src)}
                   style={{
                     cursor: "pointer",
                     width: "60px",
@@ -118,7 +122,7 @@ const ProductDetails: React.FC = () => {
             {/* Main Image */}
             <div className="flex-grow-1">
               <img
-                src={product.name}
+                src={mainImage}
                 alt="Product"
                 className="img-fluid rounded"
                 style={{  objectFit: "cover" }}
@@ -129,7 +133,7 @@ const ProductDetails: React.FC = () => {
           {/* Product Info */}
           <div className="col-md-6">
             <h2 className="mb-3">{product.name}</h2>
-            <p className="text-muted mb-4">SKU: WH1000XM4</p>
+            <p className="text-muted mb-4">SKU: {product.sku}</p>
 
             <div className="mb-3">
               <span className="h4 me-2">{product.price}</span>
@@ -146,7 +150,7 @@ const ProductDetails: React.FC = () => {
             </div>
 
             <p className="mb-4">
-              fashion and beauty into art, capturing trends and personal style through expert composition.
+            {product.description}
             </p>
 
             <div className="mb-4">

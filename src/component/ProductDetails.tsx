@@ -11,7 +11,7 @@ const ProductDetails: React.FC = () => {
   const { id: productId } = useParams();
   const [product, setProduct] = useState<string[]>([]);
   const [thumbnails, setThumbnails] = useState<string[]>([]);
-  const [mainimage, setMainimage] = useState<string[]>([]);
+  const [mainImage, setMainImage] = useState<string[]>([]);
 
   useEffect(() => {
 
@@ -45,7 +45,7 @@ const ProductDetails: React.FC = () => {
           // setPosts(response.data);
           setProduct(response.data)
           setThumbnails(response.data.images)
-          setMainimage(response.data.images[0].src)
+          setMainImage(response.data.images[0].src)
         })
         .catch(error => {
           console.error('Error fetching posts:', error);
@@ -87,8 +87,8 @@ const ProductDetails: React.FC = () => {
                   key={index}
                   src={thumb.src}
                   alt={`Thumbnail ${index + 1}`}
-                  className={`thumbnail rounded ${mainimage === thumb ? "border border-primary" : ""}`}
-                  onClick={() => setMainimage(thumb.src)}
+                  className={`thumbnail rounded ${mainImage === thumb ? "border border-primary" : ""}`}
+                  onClick={() => setMainImage(thumb.src)}
                   style={{
                     cursor: "pointer",
                     width: "60px",

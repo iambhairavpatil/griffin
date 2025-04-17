@@ -4,6 +4,7 @@ import { RootState } from '../store';
 import { Link } from "react-router-dom";
 
 const navLinks = [
+  { label: "Home", href: "/" },
   { label: "Women", href: "/WomenCategory" },
   { label: "Men", href: "/MenCategory" },
   { label: "About", href: "/about" },
@@ -16,10 +17,10 @@ const categories = [
   "New Arrivals",
   "Best-Sellers",
   "Clothing",
-  "Tops & Sweaters",
-  "Pants & Jeans",
-  "Outerwear",
-  "Shoes & Bags",
+  // "Tops & Sweaters",
+  // "Pants & Jeans",
+  // "Outerwear",
+  // "Shoes & Bags",
   "Sale",
 ];
 
@@ -70,7 +71,7 @@ const Header: React.FC = () => {
 
           {/* Icons - Desktop */}
           <div className="d-none d-lg-flex align-items-center gap-3">
-            <a href="#" className="text-dark"><i className="bi bi-search fs-5"></i></a>
+            {/* <a href="#" className="text-dark"><i className="bi bi-search fs-5"></i></a> */}
             <a href="#" className="text-dark"><i className="bi bi-person fs-5"></i></a>
             <a href="#" className="text-dark position-relative">
               <i className="bi bi-bag fs-5"></i>
@@ -117,12 +118,12 @@ const Header: React.FC = () => {
           <ul className="nav justify-content-center flex-wrap gap-2">
             {categories.map((category) => (
               <li className="nav-item" key={category}>
-                <a
+                <Link to={`/category/15`} 
                   className={`nav-link small text-dark ${category === "Sale" ? "fw-bold text-danger" : ""}`}
-                  href="#"
+                  
                 >
                   {category}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

@@ -17,7 +17,7 @@ const ProductDetails: React.FC = () => {
 
       const customer_key = "ck_9d1343c5533dcde594dd88017901e9dc9a4c513d";
       const consumer_key = "cs_1d2c74719e0a0492806b9da3175f5fdf3972880c";
-      const oauth = OAuth({
+      const oauth = new OAuth({
         consumer: {
           key: customer_key,
           secret: consumer_key
@@ -40,23 +40,16 @@ const ProductDetails: React.FC = () => {
       
       axios.get(request_data.url, { headers })
         .then(response => {
-          console.log("***************************************");
+          // console.log("***************************************");
           console.log(response.data);
           // setPosts(response.data);
           setProduct(response.data)
           setThumbnails(response.data.images)
           setMainimage(response.data.images[0].src)
         })
-        // .then(res => setProducts(res.data.products))
         .catch(error => {
           console.error('Error fetching posts:', error);
         });
-
-      //axios.get(`https://dummyjson.com/products/category/${categoryName}`)
-      //axios.get(`http://localhost/griffin/wp-json/wc/v3/products?category=15&oauth_consumer_secret=cs_e2054cc8f75fcfe86d9a48b059724e127cc7ac65&oauth_consumer_key=ck_8a4d1d8e35ef239ca2308e0e69cf198c3058270f&oauth_signature_method=HMAC-SHA1&oauth_timestamp=••••••&oauth_nonce=••••••&oauth_version=••••••&oauth_signature=cs_e2054cc8f75fcfe86d9a48b059724e127cc7ac65`)
-      // axios.request(config)
-      //  .then(res => setProducts(res.data.products))
-      //  .catch(err => console.error("Error loading products:", err));
     
   }, [productId]);
 
@@ -64,20 +57,9 @@ const ProductDetails: React.FC = () => {
     "../src/assets/images/p1.jpg",
   );
   const [quantity, setQuantity] = useState(1);
-
-  // const thumbnails = [
-  //   "../src/assets/images/p2.jpg",
-  //   "../src/assets/images/p3.jpg",
-  //   "../src/assets/images/p4.jpg",
-  //   "../src/assets/images/p5.jpg",
-  //   "../src/assets/images/p6.jpg",
-  // ];
-  // const { id } = useParams();
   const compare_icon = "../src/assets/images/compare_ico.png";
   const ask_icon = "../src/assets/images/ask_icon.png";
   const share_icon = "../src/assets/images/share_ico.png";
-
-  
   const breadcrumbCategory = product.category;
   const breadcrumbTitle = product.name;
   return (
@@ -182,10 +164,7 @@ const ProductDetails: React.FC = () => {
             <button className="btn bg-dark text-white btn-lg mb-3 me-2">
               <i className="bi bi-cart-plus"></i> Add to Cart
             </button>
-
-            {/* <button className="btn btn-outline-secondary btn-lg mb-3">
-              <i className="bi bi-heart"></i> Add to Wishlist
-            </button> */}
+      
 
             <div className="mt-4 mb-4">
               <span className="p-3 inline-block"><img src={compare_icon} alt={`icons`} /> Compare</span>

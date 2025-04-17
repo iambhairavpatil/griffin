@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const Footer: React.FC = () => {
     return (
         <>
@@ -58,13 +60,8 @@ const Footer: React.FC = () => {
 
                     <div className="row border-top border-secondary pt-3">
                         <div className="col d-flex justify-content-center justify-content-md-between gap-4">
-                            <a href="#" className="text-muted small text-decoration-none">Privacy Policy</a>
-                            <a href="#" className="text-muted small text-decoration-none">Terms & Conditions</a>
-                            {/* <a href="#" className="text-muted small text-decoration-none">Do Not Sell or Share My Personal Information</a> */}
-                            {/* <a href="#" className="text-muted small text-decoration-none">CS Supply Chain Transparency</a> */}
-                            {/* <a href="#" className="text-muted small text-decoration-none">Vendor Code of Conduct</a>
-                            <a href="#" className="text-muted small text-decoration-none">Sitemap Pages</a> */}
-                            {/* <a href="#" className="text-muted small text-decoration-none">Sitemap Products</a> */}
+                            <Link  to={`/PrivacyPolicy`} className="text-muted small text-decoration-none">Privacy Policy</Link>
+                            <Link  to={`/TermsCondition`}  className="text-muted small text-decoration-none">Terms & Conditions</Link>                           
                         </div>
                     </div>
                     <div className="row pt-1">

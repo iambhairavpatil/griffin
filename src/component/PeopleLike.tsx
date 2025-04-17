@@ -101,7 +101,7 @@ const PeopleLike: React.FC = () => {
                                             key={index}
                                             className="me-3"
                                             style={{
-                                                flex: index === 0 ? "0 0 40%" : "0 0 30%",
+                                                flex: index === 0 ? "0 0 40%" : "0 0 40%",
                                             }}
                                         >
                                             <div className="card h-100 border-0">

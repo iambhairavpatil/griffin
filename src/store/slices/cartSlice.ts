@@ -1,22 +1,39 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface CartState {
-  items: number;
+  items: { id: number; quantity: number; product: any }[];
+  isCartVisible: boolean;
 }
 
 const initialState: CartState = {
-  items: 2, // example default
+  items: [],
+  isCartVisible: false, // This manages visibility directly
 };
 
 const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    setItems: (state, action: PayloadAction<number>) => {
-      state.items = action.payload;
+    addToCart: (state, action: PayloadAction<any>) => {
+      const itemIndex = state.items.findIndex(item => item.id === action.payload.id);
+      if (itemIndex !== -1) {
+        state.items[itemIndex].quantity += action.payload.quantity;
+      } else {
+        state.items.push(action.payload);
+      }
+    },
+    removeFromCart: (state, action: PayloadAction<number>) => {
+      state.items = state.items.filter(item => item.id !== action.payload);
+    },
+    closeCart: (state) => {
+      state.isCartVisible = false; // Close cart directly
+    },
+    toggleCartVisibility: (state) => {
+      state.isCartVisible = !state.isCartVisible; // Toggle visibility
     },
   },
 });
 
-export const { setItems } = cartSlice.actions;
+export const { addToCart, removeFromCart, closeCart, toggleCartVisibility } = cartSlice.actions;
+
 export default cartSlice.reducer;

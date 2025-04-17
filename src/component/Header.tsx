@@ -1,7 +1,11 @@
 import React from "react";
-import { useSelector } from 'react-redux';
-import { RootState } from '../store';
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../store";
 import { Link } from "react-router-dom";
+import { toggleCartVisibility } from "../store/slices/cartSlice";
+import Cart from "./Cart"; // Import the Cart component
+
+const indiaFlag = "./src/assets/images/india_flag.png";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -10,25 +14,23 @@ const navLinks = [
   { label: "About", href: "/about" },
 ];
 
-
-
 const categories = [
   "Holiday Gifting",
   "New Arrivals",
   "Best-Sellers",
   "Clothing",
-  // "Tops & Sweaters",
-  // "Pants & Jeans",
-  // "Outerwear",
-  // "Shoes & Bags",
   "Sale",
 ];
 
-const indiaFlag = '../../src/assets/images/india_flag.png';
-
 const Header: React.FC = () => {
-  
-  const cartCount = useSelector((state: RootState) => state.cart.items);
+  const dispatch = useDispatch();
+  const items = useSelector((state: RootState) => state.cart.items);
+  const totalCount = items.reduce((sum, item) => sum + item.quantity, 0);
+  const isCartVisible = useSelector((state: RootState) => state.cart.isCartVisible);
+
+  const handleCartToggle = () => {
+    dispatch(toggleCartVisibility());
+  };
 
   return (
     <header className="border-bottom">
@@ -53,45 +55,47 @@ const Header: React.FC = () => {
             <ul className="navbar-nav flex-row gap-3">
               {navLinks.map((link) => (
                 <li className="nav-item" key={link.label}>
-                  <a className="nav-link fw-bold small text-dark" href={link.href}>{link.label}</a>
+                  <Link className="nav-link fw-bold small text-dark" to={link.href}>
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
           {/* Mobile Toggler */}
-          <button className="navbar-toggler d-lg-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+          <button
+            className="navbar-toggler d-lg-none border-0"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#mobileMenu"
+          >
             <span className="navbar-toggler-icon"></span>
           </button>
 
           {/* Logo */}
-          <Link to={`/`} className="navbar-brand mx-auto fw-bold fs-5 text-uppercase position-absolute start-50 translate-middle-x">
+          <Link
+            to="/"
+            className="navbar-brand mx-auto fw-bold fs-5 text-uppercase position-absolute start-50 translate-middle-x"
+          >
             The Griffin Original
           </Link>
 
-          {/* Icons - Desktop */}
+          {/* Cart Icon */}
           <div className="d-none d-lg-flex align-items-center gap-3">
-            {/* <a href="#" className="text-dark"><i className="bi bi-search fs-5"></i></a> */}
-            <a href="#" className="text-dark"><i className="bi bi-person fs-5"></i></a>
-            <a href="#" className="text-dark position-relative">
-              <i className="bi bi-bag fs-5"></i>
-              <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                {cartCount}
-              </span>
+            <a
+              href="#"
+              className="btn btn-outline-dark position-relative"
+              onClick={handleCartToggle}
+            >
+              <i className="bi bi-cart-fill"></i> Cart
+              {totalCount > 0 && (
+                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  {totalCount}
+                </span>
+              )}
             </a>
           </div>
-        </div>
-
-        {/* Icons - Mobile */}
-        <div className="container d-flex d-lg-none justify-content-center gap-4 mt-2 pb-2 border-top pt-2">
-          <a href="#" className="text-dark"><i className="bi bi-search fs-5"></i></a>
-          <a href="#" className="text-dark"><i className="bi bi-person fs-5"></i></a>
-          <a href="#" className="text-dark position-relative">
-            <i className="bi bi-bag fs-5"></i>
-            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-              {cartCount}
-            </span>
-          </a>
         </div>
       </nav>
 
@@ -105,22 +109,26 @@ const Header: React.FC = () => {
           <ul className="nav flex-column">
             {navLinks.map((link) => (
               <li className="nav-item" key={link.label}>
-                <a className="nav-link fw-bold small text-dark" href={link.href}>{link.label}</a>
+                <Link className="nav-link fw-bold small text-dark" to={link.href}>
+                  {link.label}
+                </Link>
               </li>
             ))}
           </ul>
         </div>
       </div>
 
-      {/* Category Bar */}
+             {/* Category Bar */}
       <nav className="bg-white border-top border-bottom py-2">
         <div className="container">
           <ul className="nav justify-content-center flex-wrap gap-2">
             {categories.map((category) => (
               <li className="nav-item" key={category}>
-                <Link to={`/category/15`} 
-                  className={`nav-link small text-dark ${category === "Sale" ? "fw-bold text-danger" : ""}`}
-                  
+                <Link
+                  to="/category/15"
+                  className={`nav-link small text-dark ${
+                    category === "Sale" ? "fw-bold text-danger" : ""
+                  }`}
                 >
                   {category}
                 </Link>
@@ -129,6 +137,9 @@ const Header: React.FC = () => {
           </ul>
         </div>
       </nav>
+
+      {/* Show Cart When Visible */}
+      <Cart isCartVisible={isCartVisible} />
     </header>
   );
 };

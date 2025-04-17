@@ -60,9 +60,7 @@ const ProductDetails: React.FC = () => {
     
   }, [productId]);
 
-  const [mainImage, setMainImage] = useState(
-    "../src/assets/images/p1.jpg",
-  );
+  
   const [quantity, setQuantity] = useState(1);
 
   // const thumbnails = [
@@ -107,8 +105,8 @@ const ProductDetails: React.FC = () => {
                   key={index}
                   src={thumb.src}
                   alt={`Thumbnail ${index + 1}`}
-                  className={`thumbnail rounded ${mainImage === thumb ? "border border-primary" : ""}`}
-                  onClick={() => setMainImage(thumb.src)}
+                  className={`thumbnail rounded ${mainimage === thumb ? "border border-primary" : ""}`}
+                  onClick={() => setMainimage(thumb.src)}
                   style={{
                     cursor: "pointer",
                     width: "60px",
@@ -153,19 +151,6 @@ const ProductDetails: React.FC = () => {
             {product.description}
             </p>
 
-            <div className="mb-4">
-              <h5>Color:</h5>
-              <div className="btn-group" role="group" aria-label="Color selection">
-                <input type="radio" className="btn-check" name="color" id="black" autoComplete="off" defaultChecked />
-                <label className="btn btn-outline-dark" htmlFor="black">Black</label>
-
-                <input type="radio" className="btn-check" name="color" id="silver" autoComplete="off" />
-                <label className="btn btn-outline-secondary" htmlFor="silver">Silver</label>
-
-                <input type="radio" className="btn-check" name="color" id="blue" autoComplete="off" />
-                <label className="btn btn-outline-primary" htmlFor="blue">Blue</label>
-              </div>
-            </div>
 
             <div className="mb-4 col-3">
               <label htmlFor="quantity" className="form-label">Quantity:</label>

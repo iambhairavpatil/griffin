@@ -14,6 +14,8 @@ import ProductDetails from './component/ProductDetails'; // ✅ Corrected
 import ProductListing from './component/ProductListing';
 import WomenCategory from './component/WomenCategory';
 import MenCategory from './component/MenCategory';
+import TermsCondition from './component/TermsCondition';
+import PrivacyPolicy from './component/PrivacyPolicy';
 
 function App() {
   return (
@@ -40,7 +42,8 @@ function App() {
             </>
           }
         />
-
+        <Route path="/TermsCondition" element={<TermsCondition />} />
+        <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
         <Route path="/About" element={<About />} />
         <Route path="/WomenCategory" element={<WomenCategory />} />
         <Route path="/MenCategory" element={<MenCategory />} />

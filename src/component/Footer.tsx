@@ -60,8 +60,8 @@ const Footer: React.FC = () => {
 
                     <div className="row border-top border-secondary pt-3">
                         <div className="col d-flex justify-content-center justify-content-md-between gap-4">
-                            <Link  to={`/PrivacyPolicy`} className="text-muted small text-decoration-none">Privacy Policy</Link>
-                            <Link  to={`/TermsCondition`}  className="text-muted small text-decoration-none">Terms & Conditions</Link>                           
+                            <Link to={`/PrivacyPolicy`} className="text-muted small text-decoration-none">Privacy Policy</Link>
+                            <Link to={`/TermsCondition`} className="text-muted small text-decoration-none">Terms & Conditions</Link>
                         </div>
                     </div>
                     <div className="row pt-1">

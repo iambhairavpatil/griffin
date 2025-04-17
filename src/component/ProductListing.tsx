@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useParams, Link } from "react-router-dom";
 import ProductCard from "../component/ProductCard";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import OAuth  from "oauth-1.0a";
+import CryptoJS from "crypto-js";
 
 type Product = {
   id: number;
@@ -86,7 +89,55 @@ const staticProducts: Product[] = [
 ];
 
 const ProductListing = () => {
-  const [products] = useState<Product[]>(staticProducts);
+  const { categoryName } = useParams();
+  const [products, setProducts] = useState<Product[]>([]);
+  const [categories, setCategories] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (categoryName) {
+
+
+      const customer_key = "ck_9d1343c5533dcde594dd88017901e9dc9a4c513d";
+      const consumer_key = "cs_1d2c74719e0a0492806b9da3175f5fdf3972880c";
+      const oauth = OAuth({
+        consumer: {
+          key: customer_key,
+          secret: consumer_key
+        },
+        signature_method: 'HMAC-SHA1',
+        hash_function(base_string, key) {
+          return CryptoJS.enc.Base64.stringify(CryptoJS.HmacSHA1(base_string, key));
+        }
+      });
+  
+      const request_data = {
+        url: 'https://marathicarworld.com/backend/wordpress/wp-json/wc/v3/products?category='+categoryName,
+        method: 'GET'
+      };
+  
+      const authorization = oauth.authorize(request_data);
+      const headers = oauth.toHeader(authorization);
+      
+      axios.get(request_data.url, { headers })
+        .then(response => {
+          console.log("***************************************");
+          console.log(response.data);
+          // setPosts(response.data);
+          setProducts(response.data)
+        })
+        // .then(res => setProducts(res.data.products))
+        .catch(error => {
+          console.error('Error fetching posts:', error);
+        });
+
+      //axios.get(`https://dummyjson.com/products/category/${categoryName}`)
+      //axios.get(`http://localhost/griffin/wp-json/wc/v3/products?category=15&oauth_consumer_secret=cs_e2054cc8f75fcfe86d9a48b059724e127cc7ac65&oauth_consumer_key=ck_8a4d1d8e35ef239ca2308e0e69cf198c3058270f&oauth_signature_method=HMAC-SHA1&oauth_timestamp=••••••&oauth_nonce=••••••&oauth_version=••••••&oauth_signature=cs_e2054cc8f75fcfe86d9a48b059724e127cc7ac65`)
+      // axios.request(config)
+      //  .then(res => setProducts(res.data.products))
+      //  .catch(err => console.error("Error loading products:", err));
+    }
+  }, [categoryName]);
+  // const [products] = useState<Product[]>(staticProducts);
 
   return (
     <div className="container pt-3 pb-5 text-white">  
@@ -158,13 +209,13 @@ const ProductListing = () => {
               <div className="col-md-4" key={product.id}>
                 <ProductCard
                   id={product.id}
-                  image={product.images[0]}
-                  name={product.title}
+                  image={product.images[0]["src"]}
+                  name={product.name}
                   price={product.price}
-                  originalPrice={product.originalPrice}
-                  colors={product.colors}
+                  originalPrice={product.regular_price}
+                  // colors={product.colors}
                   tags={product.tags}
-                  onSale={product.discountPercentage > 0}
+                  // onSale={product.discountPercentage > 0}
                 />
               </div>
             ))}

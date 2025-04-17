@@ -1,8 +1,61 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PeopleLike from "./PeopleLike";
-import { Link, useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+import axios from "axios";
+import OAuth  from "oauth-1.0a";
+import CryptoJS from "crypto-js";
+
 
 const ProductDetails: React.FC = () => {
+
+  const { id: productId } = useParams();
+  const [product, setProduct] = useState<string[]>([]);
+
+  useEffect(() => {
+
+      const customer_key = "ck_9d1343c5533dcde594dd88017901e9dc9a4c513d";
+      const consumer_key = "cs_1d2c74719e0a0492806b9da3175f5fdf3972880c";
+      const oauth = OAuth({
+        consumer: {
+          key: customer_key,
+          secret: consumer_key
+        },
+        signature_method: 'HMAC-SHA1',
+        hash_function(base_string, key) {
+          return CryptoJS.enc.Base64.stringify(CryptoJS.HmacSHA1(base_string, key));
+        }
+      });
+  
+      const request_data = {
+        url: 'https://marathicarworld.com/backend/wordpress/wp-json/wc/v3/products/'+productId,
+        method: 'GET'
+      };
+
+      console.log(request_data)
+  
+      const authorization = oauth.authorize(request_data);
+      const headers = oauth.toHeader(authorization);
+      
+      axios.get(request_data.url, { headers })
+        .then(response => {
+          console.log("***************************************");
+          console.log(response.data);
+          // setPosts(response.data);
+          setProduct(response.data)
+        })
+        // .then(res => setProducts(res.data.products))
+        .catch(error => {
+          console.error('Error fetching posts:', error);
+        });
+
+      //axios.get(`https://dummyjson.com/products/category/${categoryName}`)
+      //axios.get(`http://localhost/griffin/wp-json/wc/v3/products?category=15&oauth_consumer_secret=cs_e2054cc8f75fcfe86d9a48b059724e127cc7ac65&oauth_consumer_key=ck_8a4d1d8e35ef239ca2308e0e69cf198c3058270f&oauth_signature_method=HMAC-SHA1&oauth_timestamp=••••••&oauth_nonce=••••••&oauth_version=••••••&oauth_signature=cs_e2054cc8f75fcfe86d9a48b059724e127cc7ac65`)
+      // axios.request(config)
+      //  .then(res => setProducts(res.data.products))
+      //  .catch(err => console.error("Error loading products:", err));
+    
+  }, [productId]);
+
   const [mainImage, setMainImage] = useState(
     "../src/assets/images/p1.jpg",
   );
@@ -20,12 +73,9 @@ const ProductDetails: React.FC = () => {
   const ask_icon = "../src/assets/images/ask_icon.png";
   const share_icon = "../src/assets/images/share_ico.png";
 
-  const product = {
-    title: "Lorem ipsom",
-    category: "Perfume"
-  };
-  const breadcrumbCategory = product.category.toLowerCase();
-  const breadcrumbTitle = product.title;
+  
+  const breadcrumbCategory = product.category;
+  const breadcrumbTitle = product.name;
   return (
     <div>
       <nav aria-label="breadcrumb" className="my-3 container">
@@ -68,22 +118,22 @@ const ProductDetails: React.FC = () => {
             {/* Main Image */}
             <div className="flex-grow-1">
               <img
-                src={mainImage}
+                src={product.name}
                 alt="Product"
                 className="img-fluid rounded"
-                style={{ width: "100%", objectFit: "cover" }}
+                style={{  objectFit: "cover" }}
               />
             </div>
           </div>
 
           {/* Product Info */}
           <div className="col-md-6">
-            <h2 className="mb-3">Lorem Ipsom</h2>
+            <h2 className="mb-3">{product.name}</h2>
             <p className="text-muted mb-4">SKU: WH1000XM4</p>
 
             <div className="mb-3">
-              <span className="h4 me-2">$349.99</span>
-              <span className="text-muted"><s>$399.99</s></span>
+              <span className="h4 me-2">{product.price}</span>
+              <span className="text-muted"><s>{product.regular_price}</s></span>
             </div>
 
             <div className="mb-3">
@@ -156,9 +206,7 @@ const ProductDetails: React.FC = () => {
             <h6>Women Collection</h6>
             <h4 className="mb-3">Product Description</h4>
             <p className="text-muted">
-              Experience unmatched sound clarity and comfort. These headphones are designed to provide the
-              best acoustic performance while keeping you in style. Whether you're commuting, working, or
-              relaxing, they make every moment immersive.
+              {product.description}
             </p>
 
             <p>Size: <span className="p-1 px-2 mb-4 bg-dark text-white rounded-circle">M</span></p>

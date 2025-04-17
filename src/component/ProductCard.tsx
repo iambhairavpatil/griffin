@@ -21,8 +21,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   tags,
   onSale,
 }) => {
-  const truncate = (text: string, limit: number) =>
-    text.length > limit ? text.substring(0, limit) + "..." : text;
+
   return (
 
     <>
@@ -41,7 +40,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
                 title={name}
                 style={{ maxWidth: "100%" }}
               >
-                {truncate(name, 15)}
+                {name}
               </h6>
 
               <p className="text-end text-primary mt-1">

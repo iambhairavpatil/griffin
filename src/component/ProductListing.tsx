@@ -2,8 +2,11 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import ProductCard from "../component/ProductCard";
 import axios from "axios";
-import OAuth  from "oauth-1.0a";
+import OAuth from "oauth-1.0a";
 import CryptoJS from "crypto-js";
+import { setLoading } from "../store/slices/loadingSlice";
+import { RootState } from "../store";
+import { useSelector, useDispatch } from "react-redux";
 
 type Product = {
   name: string;
@@ -13,7 +16,8 @@ type Product = {
   price: number;
   originalPrice: number;
   discountPercentage: number;
-  images: string[];
+  // images: string[];
+  images: { src: string }[];
   category: string;
   colors: string[];
   tags: string[];
@@ -24,12 +28,12 @@ type Product = {
 const ProductListing = () => {
   const { categoryName } = useParams();
   const [products, setProducts] = useState<Product[]>([]);
-  const [categories, setCategories] = useState<string[]>([]);
+  // const [categories, setCategories] = useState<string[]>([]);
+  const dispatch = useDispatch();
+  const loading = useSelector((state: RootState) => state.loading.isLoading);
 
   useEffect(() => {
     if (categoryName) {
-
-
       const customer_key = "ck_9d1343c5533dcde594dd88017901e9dc9a4c513d";
       const consumer_key = "cs_1d2c74719e0a0492806b9da3175f5fdf3972880c";
       const oauth = new OAuth({
@@ -42,15 +46,17 @@ const ProductListing = () => {
           return CryptoJS.enc.Base64.stringify(CryptoJS.HmacSHA1(base_string, key));
         }
       });
-  
+
       const request_data = {
-        url: 'https://marathicarworld.com/backend/wordpress/wp-json/wc/v3/products?category='+categoryName,
+        url: 'https://marathicarworld.com/backend/wordpress/wp-json/wc/v3/products?category=' + categoryName,
         method: 'GET'
       };
-  
+
       const authorization = oauth.authorize(request_data);
       const headers = oauth.toHeader(authorization);
-      
+
+      dispatch(setLoading(true)); // GLOBAL LOADING START
+
       axios.get(request_data.url, { headers })
         .then(response => {
           console.log("***************************************");
@@ -60,20 +66,32 @@ const ProductListing = () => {
         })
         .catch(error => {
           console.error('Error fetching posts:', error);
-        });      
+        })
+        .finally(() => {
+          dispatch(setLoading(false)); // GLOBAL LOADING END
+        });
     }
-  }, [categoryName]);
+  }, [categoryName, dispatch]);
 
+  if (loading) {
+    return (
+      <div className="d-flex justify-content-center align-items-center vh-100 loader-wrapper">
+        <div className="loader text-dark" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <div className="container pt-3 pb-5 text-white">  
-       <nav aria-label="breadcrumb" className="mb-3">
-  <ol className="breadcrumb">
-    <li className="breadcrumb-item"><Link to="/">Home</Link></li>
-    <li className="breadcrumb-item"><Link to="/">Products</Link></li>
-    <li className="breadcrumb-item active" aria-current="page">All</li>
-  </ol>
-</nav>
+    <div className="container pt-3 pb-5 text-white">
+      <nav aria-label="breadcrumb" className="mb-3">
+        <ol className="breadcrumb">
+          <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+          <li className="breadcrumb-item"><Link to="/">Products</Link></li>
+          <li className="breadcrumb-item active" aria-current="page">All</li>
+        </ol>
+      </nav>
 
       <div className="row">
         {/* Left Filter Panel */}
@@ -135,13 +153,14 @@ const ProductListing = () => {
               <div className="col-md-4" key={product.id}>
                 <ProductCard
                   id={product.id}
-                  image={product.images[0]["src"]}
+                  image={product.images[0]?.src || ""}
                   name={product.name}
                   price={product.price}
                   originalPrice={product.regular_price}
-                  // colors={product.colors}
-                  tags={product.tags} colors={[]}                  // onSale={product.discountPercentage > 0}
+                  tags={product.tags || []}
+                  colors={[]}
                 />
+
               </div>
             ))}
           </div>

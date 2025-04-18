@@ -30,19 +30,21 @@ const Cart: React.FC<CartProps> = ({ isCartVisible }) => {
           <h4>Your Cart</h4>
           <button onClick={handleClose} className="btn-close" aria-label="Close"></button>
         </div>
-        <p>Total items: {totalCount}</p>
-        <p>Total price: ₹{totalPrice.toFixed(2)}</p>
+      </div>
+      <div className="card-body">
+        <p>Total items: <b>{totalCount}</b></p>
+        <p>Total price: ₹ <b>{totalPrice.toFixed(2)}</b></p>
       </div>
 
       {/* List Cart Items */}
       {items.length === 0 ? (
-        <p>Your cart is empty.</p>
+        <p className="cart-empty">Your cart is empty.</p>
       ) : (
         <div className="cart-items">
           {items.map((item) => (
             <div key={item.id} className="cart-item">
               <img
-                src={item.product.image} // Assuming product has an image property
+                src={item.product.images[0]["src"]} // Assuming product has an image property                
                 alt={item.product.name}
                 width="50"
                 height="50"
@@ -51,7 +53,7 @@ const Cart: React.FC<CartProps> = ({ isCartVisible }) => {
                 <p>{item.product.name}</p>
                 <p>Price: ₹{item.product.price}</p>
                 <p>Quantity: {item.quantity}</p>
-                <button onClick={() => handleRemove(item.id)}>Remove</button>
+                <p className="py-3"><button onClick={() => handleRemove(item.id)}>Remove</button></p>
               </div>
             </div>
           ))}

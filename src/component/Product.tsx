@@ -1,9 +1,17 @@
 import { Link } from "react-router-dom"
 import { categories } from "../data/categories"; // adjust path if needed
+import { useInView } from "react-intersection-observer";
   
   const Product: React.FC = () => {
+
+    const { ref, inView } = useInView({
+      triggerOnce: true,
+      threshold: 0.3,
+    });
+
     return (
-      <section className="py-5 text-center">
+      
+      <section className={`py-5 text-center fade-up-section ${inView ? 'in-view' : ''}`} ref={ref}>
         <div className="container">
           <h2 className="mb-4">Shop by Category</h2>
           <div className="row g-3">

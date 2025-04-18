@@ -7,7 +7,7 @@ interface CartState {
 
 const initialState: CartState = {
   items: [],
-  isCartVisible: false, // This manages visibility directly
+  isCartVisible: false, 
 };
 
 const cartSlice = createSlice({
@@ -26,10 +26,10 @@ const cartSlice = createSlice({
       state.items = state.items.filter(item => item.id !== action.payload);
     },
     closeCart: (state) => {
-      state.isCartVisible = false; // Close cart directly
+      state.isCartVisible = false; 
     },
     toggleCartVisibility: (state) => {
-      state.isCartVisible = !state.isCartVisible; // Toggle visibility
+      state.isCartVisible = !state.isCartVisible; 
     },
   },
 });

@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../store";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { toggleCartVisibility } from "../store/slices/cartSlice";
 import Cart from "./Cart"; // Import the Cart component
 
@@ -55,9 +55,9 @@ const Header: React.FC = () => {
             <ul className="navbar-nav flex-row gap-3">
               {navLinks.map((link) => (
                 <li className="nav-item" key={link.label}>
-                  <Link className="nav-link fw-bold small text-dark" to={link.href}>
+                  <NavLink className="nav-link fw-bold small text-dark" to={link.href}>
                     {link.label}
-                  </Link>
+                  </NavLink>
                 </li>
               ))}
             </ul>
@@ -109,26 +109,27 @@ const Header: React.FC = () => {
           <ul className="nav flex-column">
             {navLinks.map((link) => (
               <li className="nav-item" key={link.label}>
-                <Link className="nav-link fw-bold small text-dark" to={link.href}>
+                {/* <Link className="nav-link fw-bold small text-dark" to={link.href}>
                   {link.label}
-                </Link>
+                </Link> */}
+                <NavLink className="nav-link fw-bold small text-dark" to={link.href}>
+                  {link.label}
+                </NavLink>
               </li>
             ))}
           </ul>
         </div>
       </div>
 
-             {/* Category Bar */}
-      <nav className="bg-white border-top border-bottom py-2">
+      <nav className="category-bar border-top py-2">
         <div className="container">
           <ul className="nav justify-content-center flex-wrap gap-2">
             {categories.map((category) => (
               <li className="nav-item" key={category}>
                 <Link
                   to="/category/15"
-                  className={`nav-link small text-dark ${
-                    category === "Sale" ? "fw-bold text-danger" : ""
-                  }`}
+                  className={`nav-link small text-dark ${category === "Sale" ? "fw-bold text-danger" : ""
+                    }`}
                 >
                   {category}
                 </Link>

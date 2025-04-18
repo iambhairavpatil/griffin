@@ -27,7 +27,7 @@ const routes = [
   { path: "/MenCategory", element: <MenCategory /> },
   { path: "/product/:id", element: <ProductDetails /> },
   { path: "/category/:categoryName", element: <ProductListing /> },
-  { path: "/Cart", element: <Cart/>},
+  { path: "/Cart", element: <Cart isCartVisible={false}/>},
   { path: "*", element: <div>Page Not Found</div> }
 ];
 

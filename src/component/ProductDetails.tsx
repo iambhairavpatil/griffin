@@ -90,12 +90,12 @@ const ProductDetails: React.FC = () => {
       window.scrollTo({ top: 0, behavior: "smooth" }); // 👈 Scroll to top
     }
   };
-  
+
 
   if (loading) {
     return (
-      <div className="d-flex justify-content-center align-items-center vh-100">
-        <div className="spinner-border text-dark" role="status">
+      <div className="d-flex justify-content-center align-items-center vh-100 loader-wrapper">
+        <div className="loader text-dark" role="status">
           <span className="visually-hidden">Loading...</span>
         </div>
       </div>
@@ -142,12 +142,28 @@ const ProductDetails: React.FC = () => {
             </div>
 
             <div className="flex-grow-1 ">
-              <img
+              {/* <img
                 src={mainImage}
                 alt="Product"
                 className="img-fluid rounded w-100"
                 style={{ objectFit: "cover" }}
-              />
+              /> */}
+              {mainImage ? (
+                <img
+                  src={mainImage}
+                  alt="Product"
+                  className="img-fluid rounded w-100"
+                  style={{ objectFit: "cover" }}
+                />
+              ) : (
+                <div
+                  className="bg-light d-flex justify-content-center align-items-center rounded"
+                  style={{ width: "100%", height: "400px" }}
+                >
+                  <span className="text-muted">No Image Available</span>
+                </div>
+              )}
+
             </div>
           </div>
 

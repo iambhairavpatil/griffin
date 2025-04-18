@@ -109,11 +109,11 @@ const PeopleLike: React.FC = () => {
                                                     src="../src/assets/images/category6.png"
                                                     className="card-img-top rounded"
                                                     alt={`Product ${index + 1}`}
+                                                    style={{
+                                                        height: index % 3 === 0 ? "350px" : "213px",
+                                                        objectFit: "cover",
+                                                    }}
                                                 />
-                                                {/* <div className="card-body p-2 text-center">
-                                                    <h6 className="mb-1">Product {index + 1}</h6>
-                                                    <small className="text-muted">Short Description</small>
-                                                </div> */}
                                             </div>
                                         </div>
                                     ))}
@@ -136,11 +136,11 @@ const PeopleLike: React.FC = () => {
                                                     src="../src/assets/images/new_arrival1.png"
                                                     className="card-img-top rounded"
                                                     alt={`Product ${index + 1}`}
+                                                    style={{
+                                                        height: index % 3 === 0 ? "350px" : "213px",
+                                                        objectFit: "cover",
+                                                    }}
                                                 />
-                                                {/* <div className="card-body p-2 text-center">
-                                                    <h6 className="mb-1">Product {index + 1}</h6>
-                                                    <small className="text-muted">Short Description</small>
-                                                </div> */}
                                             </div>
                                         </div>
                                     ))}
@@ -171,7 +171,6 @@ const PeopleLike: React.FC = () => {
                 </div>
             </div>
         </div>
-
     );
 };
 

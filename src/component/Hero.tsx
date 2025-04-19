@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
                     }
                 });
             },
-            { threshold: 0.2 }
+            { threshold: 0.5 }
         );
 
         const video = videoRef.current;

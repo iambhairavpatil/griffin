@@ -441,3 +441,13 @@ button {
   opacity: 1;
 }
 
+#favoritesCarousel .carousel-item {
+  height: 300px;  
+}
+#favoritesCarousel .carousel-item img{
+  border: 5px solid rgba(241, 138, 138, .5);
+  height: 100%;
+  background-size: cover;
+  width: 100%;
+  display: block;
+}

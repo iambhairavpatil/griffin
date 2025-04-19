@@ -1,6 +1,6 @@
 const Favorites: React.FC = () => {
-    return (
-      <>
+  return (
+    <>
       <section className="py-5 bg-light">
         <div className="container text-center">
           <h2 className="mb-4">Everlane Favorites</h2>
@@ -8,49 +8,48 @@ const Favorites: React.FC = () => {
 
           <div id="favoritesCarousel" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-inner">
-
               <div className="carousel-item active">
                 <div className="row g-3 justify-content-center">
                   <div className="col-6 col-md-3">
-                    <img src="../../src/assets/images/slide1.png" className="d-block w-100 rounded" alt="Favorite 5" />
+                    <img src="./src/assets/images/slide1.png" className="d-block w-100" alt="Favorite 5" />
                     <p className="mt-2 small">Feel the richness.</p>
                   </div>
                   <div className="col-6 col-md-3">
-                    <img src="../../src/assets/images/slide2.png" className="d-block w-100 rounded" alt="Favorite 6" />
-                    <p className="mt-2 small">Top 10 pick</p>
+                    <img src="./src/assets/images/slide4.png" className="d-block w-100" alt="Favorite 5" />
+                    <p className="mt-2 small">Feel the richness.</p>
                   </div>
                   <div className="col-6 col-md-3">
-                    <img src="../../src/assets/images/slide3.png" className="d-block w-100 rounded" alt="Favorite 7" />
-                    <p className="mt-2 small">Elegance & Passion</p>
+                    <img src="./src/assets/images/w-1.webp" className="d-block w-100" alt="Favorite 5" />
+                    <p className="mt-2 small">Feel the richness.</p>
                   </div>
                   <div className="col-6 col-md-3">
-                    <img src="../../src/assets/images/slide4.png" className="d-block w-100 rounded" alt="Favorite 8" />
-                    <p className="mt-2 small">Luxury Essence</p>
+                    <img src="./src/assets/images/men1.webp" className="d-block w-100" alt="Favorite 5" />
+                    <p className="mt-2 small">Feel the richness.</p>
                   </div>
                 </div>
               </div>
-
 
               <div className="carousel-item">
                 <div className="row g-3 justify-content-center">
                   <div className="col-6 col-md-3">
-                    <img src="../../src/assets/images/slide1.png" className="d-block w-100 rounded" alt="Favorite 5" />
+                    <img src="./src/assets/images/slide1.png" className="d-block w-100" alt="Favorite 5" />
                     <p className="mt-2 small">Feel the richness.</p>
                   </div>
                   <div className="col-6 col-md-3">
-                    <img src="../../src/assets/images/slide2.png" className="d-block w-100 rounded" alt="Favorite 6" />
-                    <p className="mt-2 small">Top 10 pick</p>
+                    <img src="./src/assets/images/category3.png" className="d-block w-100" alt="Favorite 5" />
+                    <p className="mt-2 small">Feel the richness.</p>
                   </div>
                   <div className="col-6 col-md-3">
-                    <img src="./images/slide3.png" className="d-block w-100 rounded" alt="Favorite 7" />
-                    <p className="mt-2 small">Elegance & Passion</p>
+                    <img src="./src/assets/images/men2.webp" className="d-block w-100" alt="Favorite 5" />
+                    <p className="mt-2 small">Feel the richness.</p>
                   </div>
                   <div className="col-6 col-md-3">
-                    <img src="./images/slide4.png" className="d-block w-100 rounded" alt="Favorite 8" />
-                    <p className="mt-2 small">Luxury Essence</p>
+                    <img src="./src/assets/images/men3.webp" className="d-block w-100" alt="Favorite 5" />
+                    <p className="mt-2 small">Feel the richness.</p>
                   </div>
                 </div>
               </div>
+              
             </div>
 
 
@@ -63,9 +62,9 @@ const Favorites: React.FC = () => {
           </div>
         </div>
       </section>
-      
-      </>
-    )
-  }
-  
-  export default Favorites
+
+    </>
+  )
+}
+
+export default Favorites

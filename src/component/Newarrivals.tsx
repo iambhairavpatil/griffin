@@ -1,7 +1,8 @@
 
 const Newarrivals: React.FC = () => {
     return (
-        <><section className="py-5">
+        <>
+        <section className="py-5">
         <div className="container">
           <div className="row g-4">
             <div className="col-md-4 image-zoom-effect">

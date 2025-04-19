@@ -3,16 +3,27 @@ body {
 }
 
 .hero {
-  background: url('../src/assets/images/p8.jpg') no-repeat center center;
-  background-size: cover;
+  /* background: url('../src/assets/images/p8.jpg') no-repeat center center; */
+  /* background-size: cover;
   min-height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: white;
+  color: white; */
+  width: 100%;
+}
+.hero video,
+.hero img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  background-size: cover;
 }
 
+.hero-content {
+  z-index: 10;
+}
 .hero h1 {
   font-size: 4rem;
   font-weight: bold;
@@ -360,3 +371,73 @@ button {
   0%,40%  {background-position: 0 0,0 50%, 0 100%,50% 100%,100% 100%,100% 50%,100% 0,50% 0,  50% 50% }
   60%,100%{background-position: 0 50%, 0 100%,50% 100%,100% 100%,100% 50%,100% 0,50% 0,0 0,  50% 50% }
 }
+
+.mens-wrap{
+  margin: 20px 0 50px 0;
+}
+.mens-wrap .card {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  margin: 0 auto 30px;
+  overflow: hidden;
+  background: #f19fa7;
+
+}
+.mens-wrap .card .face.face1 video {
+  height: 100%;
+  width: 100%;
+}
+.mens-wrap .card .face.face1 img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.mens-wrap .card:hover .face.face1 img {
+  transform: scale(1.1);
+}
+
+/* === Face 2 (Text Overlay) === */
+.mens-wrap .card .face.face2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  transition: background 0.4s ease;
+  padding-bottom: 40px;
+}
+
+.mens-wrap .card:hover .face.face2 {
+  background: rgba(255, 255, 255, 0.5);
+  align-items: center;
+  width:88%;
+  height: 85%;
+   margin-top: 20px;
+  transform: scaleZ(1) translateZ(1);
+  transition: all 0.2s ease-in-out;
+  transform: translateY(20px);
+  transform: translateX(20px);
+}
+
+.mens-wrap .card .face.face2 h2 {
+  font-size: 1.2rem;
+  color: #000;
+  margin: 0;
+  opacity: 0.8;
+  transform: translateY(30px);
+  transition: all 0.4s ease;
+}
+
+.mens-wrap .card:hover .face.face2 h2 {
+  transform: translateY(0);
+  opacity: 1;
+}
+

@@ -63,6 +63,20 @@ const Hero: React.FC = () => {
                         alt="Perfume Slide 2"
                     />
                 </Carousel.Item>
+                <Carousel.Item>
+                    <img
+                        src="./src/assets/images/banner-3.jpg"
+                        className="d-block w-100"
+                        alt="Perfume Slide 2"
+                    />
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img
+                        src="./src/assets/images/banner-2.jpg"
+                        className="d-block w-100"
+                        alt="Perfume Slide 2"
+                    />
+                </Carousel.Item>
             </Carousel>
         </section>
     );

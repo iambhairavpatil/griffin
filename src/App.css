@@ -445,7 +445,7 @@ button {
   height: 300px;  
 }
 #favoritesCarousel .carousel-item img{
-  border: 5px solid rgba(241, 138, 138, .5);
+  /* border: 5px solid rgba(241, 138, 138, .5); */
   height: 100%;
   background-size: cover;
   width: 100%;

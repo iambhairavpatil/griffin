@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const MainCategory: React.FC = () => {
   return (
 
@@ -8,6 +10,7 @@ const MainCategory: React.FC = () => {
       <div className="mens-wrap">
         <div className="row">
           <div className="col-md-4">
+            <Link to="http://localhost:5173/category/15">
             <div className="card">
               <div className="face face1">
                 <div className="content">
@@ -18,8 +21,10 @@ const MainCategory: React.FC = () => {
                 <h2>Men</h2>
               </div>
             </div>
+            </Link>
           </div>
           <div className="col-md-4">
+          <Link to="http://localhost:5173/category/15">
             <div className="card">
               <div className="face face1">
                 <div className="content">
@@ -30,8 +35,10 @@ const MainCategory: React.FC = () => {
                 <h2>Party & Night Out</h2>
               </div>
             </div>
+            </Link>
           </div>
           <div className="col-md-4">
+          <Link to="http://localhost:5173/category/15">
             <div className="card">
               <div className="face face1">
                 <div className="content">
@@ -42,10 +49,12 @@ const MainCategory: React.FC = () => {
                 <h2>Date Wear</h2>
               </div>
             </div>
+            </Link>
           </div>
         </div>
         <div className="row">
           <div className="col-md-4">
+          <Link to="http://localhost:5173/category/15">
             <div className="card">
               <div className="face face1">
                 <div className="content">
@@ -56,8 +65,10 @@ const MainCategory: React.FC = () => {
                 <h2>Office Fragrances</h2>
               </div>
             </div>
+            </Link>
           </div>
           <div className="col-md-4">
+          <Link to="http://localhost:5173/category/15">
             <div className="card">
               <div className="face face1">
                 <div className="content">
@@ -68,8 +79,10 @@ const MainCategory: React.FC = () => {
                 <h2>Travel Fragrances</h2>
               </div>
             </div>
+            </Link>
           </div>
           <div className="col-md-4">
+          <Link to="http://localhost:5173/category/15">
             <div className="card">
               <div className="face face1">
                 <div className="content">
@@ -80,6 +93,7 @@ const MainCategory: React.FC = () => {
                 <h2>Exotic Oudhs</h2>
               </div>
             </div>
+            </Link>
           </div>
         </div>
         <hr className="py-3 mt-4"></hr>

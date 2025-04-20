@@ -18,17 +18,19 @@ import TermsCondition from './component/TermsCondition';
 import PrivacyPolicy from './component/PrivacyPolicy';
 import Cart from './component/Cart';
 
+
+
 const routes = [
-  { path: "/", element: <><Hero /><Product /><Newarrivals /><Favorites /><Testimonials /><Ourholiday /><Shipping /></> },
-  { path: "/TermsCondition", element: <TermsCondition /> },
-  { path: "/PrivacyPolicy", element: <PrivacyPolicy /> },
-  { path: "/About", element: <About /> },
-  { path: "/WomenCategory", element: <WomenCategory /> },
-  { path: "/MenCategory", element: <MenCategory /> },
-  { path: "/product/:id", element: <ProductDetails /> },
-  { path: "/category/:categoryName", element: <ProductListing /> },
-  { path: "/Cart", element: <Cart isCartVisible={false}/>},
-  { path: "*", element: <div>Page Not Found</div> }
+  { path: "/frontend/", element: <><Hero /><Product /><Newarrivals /><Favorites /><Testimonials /><Ourholiday /><Shipping /></> },
+  { path: "/frontend/TermsCondition", element: <TermsCondition /> },
+  { path: "/frontend/PrivacyPolicy", element: <PrivacyPolicy /> },
+  { path: "/frontend/About", element: <About /> },
+  { path: "/frontend/WomenCategory", element: <WomenCategory /> },
+  { path: "/frontend/MenCategory", element: <MenCategory /> },
+  { path: "/frontend/product/:id", element: <ProductDetails /> },
+  { path: "/frontend/category/:categoryName", element: <ProductListing /> },
+  { path: "/frontend/Cart", element: <Cart isCartVisible={false}/>},
+  { path: "/frontend/*", element: <div>Page Not Found</div> }
 ];
 
 function App() {

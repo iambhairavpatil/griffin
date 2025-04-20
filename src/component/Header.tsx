@@ -5,13 +5,13 @@ import { Link, NavLink } from "react-router-dom";
 import { toggleCartVisibility } from "../store/slices/cartSlice";
 import Cart from "./Cart"; // Import the Cart component
 
-const indiaFlag = "./src/assets/images/india_flag.png";
+const indiaFlag = "/frontend/images/india_flag.png";
 
 const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "Women", href: "/WomenCategory" },
-  { label: "Men", href: "/MenCategory" },
-  { label: "About", href: "/about" },
+  { label: "Home", href: "/frontend/" },
+  { label: "Women", href: "/frontend/WomenCategory" },
+  { label: "Men", href: "/frontend/MenCategory" },
+  { label: "About", href: "/frontend/about" },
 ];
 
 const categories = [
@@ -127,7 +127,7 @@ const Header: React.FC = () => {
             {categories.map((category) => (
               <li className="nav-item" key={category}>
                 <Link
-                  to="/category/15"
+                  to="/frontend/category/15"
                   className={`nav-link small text-dark ${category === "Sale" ? "fw-bold text-danger" : ""
                     }`}
                 >

@@ -49,7 +49,7 @@ const Testimonials: React.FC = () => {
 
 
                         <div className="col-md-6 text-center">
-                            <img src="../../src/assets/images/new_arrival3.png" alt="Customer talking" className="img-fluid rounded shadow" />
+                            <img src="/frontend/images/new_arrival3.png" alt="Customer talking" className="img-fluid rounded shadow" />
                         </div>
 
                     </div>

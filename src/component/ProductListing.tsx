@@ -55,9 +55,11 @@ const ProductListing = () => {
       const authorization = oauth.authorize(request_data);
       const headers = oauth.toHeader(authorization);
 
+      console.log(headers)
+
       dispatch(setLoading(true)); // GLOBAL LOADING START
 
-      axios.get(request_data.url, { headers })
+      axios.get(request_data.url)
         .then(response => {
           console.log("***************************************");
           console.log(response.data);
@@ -87,8 +89,8 @@ const ProductListing = () => {
     <div className="container pt-3 pb-5 text-white">
       <nav aria-label="breadcrumb" className="mb-3">
         <ol className="breadcrumb">
-          <li className="breadcrumb-item"><Link to="/">Home</Link></li>
-          <li className="breadcrumb-item"><Link to="/">Products</Link></li>
+          <li className="breadcrumb-item"><Link to="/frontend/">Home</Link></li>
+          <li className="breadcrumb-item"><Link to="/frontend/">Products</Link></li>
           <li className="breadcrumb-item active" aria-current="page">All</li>
         </ol>
       </nav>

@@ -3,14 +3,14 @@ import cartReducer from './slices/cartSlice';
 import loadingReducer from './slices/loadingSlice';
 
 // Load cart state from localStorage
-const loadState = () => {
-  try {
-    const serialized = localStorage.getItem('cart');
-    return serialized ? JSON.parse(serialized) : undefined;
-  } catch (err) {
-    return undefined;
-  }
-};
+// const loadState = () => {
+//   try {
+//     const serialized = localStorage.getItem('cart');
+//     return serialized ? JSON.parse(serialized) : undefined;
+//   } catch (err) {
+//     return undefined;
+//   }
+// };
 
 const store = configureStore({
   reducer: {

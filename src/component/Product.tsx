@@ -17,7 +17,7 @@ import { useInView } from "react-intersection-observer";
           <div className="row g-3">
             {categories.map((category) => (
               <div key={category.id} className="col-6 col-md-2">
-                <Link to={`/category/${category.id}`} className="text-decoration-none text-dark">
+                <Link to={`/frontend/category/${category.id}`} className="text-decoration-none text-dark">
                   <img src={category.image} className="img-fluid category-img" alt={category.name} />
                   <p>{category.name}</p>
                 </Link>

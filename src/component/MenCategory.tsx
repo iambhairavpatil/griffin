@@ -11,7 +11,7 @@ const MainCategory: React.FC = () => {
             <div className="card">
               <div className="face face1">
                 <div className="content">
-                  <img src="../../src/assets/images/men1.webp" alt="" className="img-fluid" />
+                  <img src="/frontend/images/men1.webp" alt="" className="img-fluid" />
                 </div>
               </div>
               <div className="face face2">
@@ -23,7 +23,7 @@ const MainCategory: React.FC = () => {
             <div className="card">
               <div className="face face1">
                 <div className="content">
-                  <img src="../../src/assets/images/men2.webp" alt="" className="img-fluid" />
+                  <img src="/frontend/images/men2.webp" alt="" className="img-fluid" />
                 </div>
               </div>
               <div className="face face2">
@@ -35,7 +35,7 @@ const MainCategory: React.FC = () => {
             <div className="card">
               <div className="face face1">
                 <div className="content">
-                  <img src="../../src/assets/images/men3.webp" alt="" className="img-fluid" />
+                  <img src="/frontend/images/men3.webp" alt="" className="img-fluid" />
                 </div>
               </div>
               <div className="face face2">
@@ -49,7 +49,7 @@ const MainCategory: React.FC = () => {
             <div className="card">
               <div className="face face1">
                 <div className="content">
-                  <img src="../../src/assets/images/slide3.png" alt="" className="img-fluid" />
+                  <img src="/frontend/images/slide3.png" alt="" className="img-fluid" />
                 </div>
               </div>
               <div className="face face2">
@@ -61,7 +61,7 @@ const MainCategory: React.FC = () => {
             <div className="card">
               <div className="face face1">
                 <div className="content">
-                  <img src="../../src/assets/images/slide1.png" alt="" className="img-fluid" />
+                  <img src="/frontend/images/slide1.png" alt="" className="img-fluid" />
                 </div>
               </div>
               <div className="face face2">
@@ -73,7 +73,7 @@ const MainCategory: React.FC = () => {
             <div className="card">
               <div className="face face1">
                 <div className="content">
-                  <img src="../../src/assets/images/new_arrival3.png" alt="" className="img-fluid" />
+                  <img src="/frontend/images/new_arrival3.png" alt="" className="img-fluid" />
                 </div>
               </div>
               <div className="face face2">
@@ -84,7 +84,7 @@ const MainCategory: React.FC = () => {
         </div>
         <hr className="py-3 mt-4"></hr>
         <div className="row">
-          <img src="../../src/assets/images/pdetails_img.png" alt="" className="img-fluid" />
+          <img src="/frontend/images/pdetails_img.png" alt="" className="img-fluid" />
         </div>
       </div>
     </div>

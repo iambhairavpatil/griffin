@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../store";
 import { removeFromCart, toggleCartVisibility } from "../store/slices/cartSlice"; // Action to remove item and toggle visibility
+import { Link } from "react-router-dom"
 
 interface CartProps {
   isCartVisible: boolean; // Prop to control visibility
@@ -61,7 +62,7 @@ const Cart: React.FC<CartProps> = ({ isCartVisible }) => {
       )}
 
       <div className="cart-footer">
-        <button className="btn btn-primary">Proceed to Checkout</button>
+      <Link to={`https://marathicarworld.com/backend/wordpress/checkout/`} className="text-muted small text-decoration-none"><button className="btn btn-primary">Proceed to Checkout</button></Link>
       </div>
     </div>
   );

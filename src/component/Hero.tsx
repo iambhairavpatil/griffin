@@ -42,14 +42,14 @@ const Hero: React.FC = () => {
                         playsInline
                         style={{ objectFit: "cover", height: "100vh" }}
                     >
-                        <source src="./src/assets/images/intro.mp4" type="video/mp4" />
+                        <source src="/frontend/images/intro.mp4" type="video/mp4" />
                     </video>
                 </Carousel.Item>
 
                 {/* Slide 2 - Image */}
                 <Carousel.Item>
                     <img
-                        src="./src/assets/images/p8.jpg"
+                        src="/frontend/images/p8.jpg"
                         className="d-block w-100"
                         alt="Perfume Slide"
                     />
@@ -58,21 +58,21 @@ const Hero: React.FC = () => {
                 {/* Slide 3 - Image */}
                 <Carousel.Item>
                     <img
-                        src="./src/assets/images/banner-1.jpg"
+                        src="/frontend/images/banner-1.jpg"
                         className="d-block w-100"
                         alt="Perfume Slide 2"
                     />
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
-                        src="./src/assets/images/banner-3.jpg"
+                        src="/frontend/images/banner-3.jpg"
                         className="d-block w-100"
                         alt="Perfume Slide 2"
                     />
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
-                        src="./src/assets/images/banner-2.jpg"
+                        src="/frontend/images/banner-2.jpg"
                         className="d-block w-100"
                         alt="Perfume Slide 2"
                     />

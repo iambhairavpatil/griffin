@@ -25,7 +25,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   return (
 
     <>
-      <Link to={`/product/${id}`} className="text-decoration-none text-dark">
+      <Link to={`/frontend/product/${id}`} className="text-decoration-none text-dark">
         <div className="card h-100 position-relative">
           {onSale && (
             <span className="badge bg-danger position-absolute top-0 start-0 m-2">

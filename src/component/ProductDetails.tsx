@@ -60,11 +60,12 @@ const ProductDetails: React.FC = () => {
     };
 
     const headers = oauth.toHeader(oauth.authorize(request_data));
+    console.log(headers)
 
     dispatch(setLoading(true)); // GLOBAL LOADING START
 
     axios
-      .get(request_data.url, { headers })
+      .get(request_data.url)
       .then((response) => {
         setProduct(response.data);
         setThumbnails(response.data.images.map((img: any) => img.src));
@@ -108,10 +109,10 @@ const ProductDetails: React.FC = () => {
       <nav aria-label="breadcrumb" className="my-3 container">
         <ol className="breadcrumb">
           <li className="breadcrumb-item">
-            <Link to="/">Home</Link>
+            <Link to="/frontend/">Home</Link>
           </li>
           <li className="breadcrumb-item">
-            <Link to={`/category/${product?.category}`}>{product?.category}</Link>
+            <Link to={`/frontend/category/${product?.category}`}>{product?.category}</Link>
           </li>
           <li className="breadcrumb-item active" aria-current="page">
             {product?.name}

@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
                                         {/* <li><a href="#" className="text-muted text-decoration-none">FAQs</a></li> */}
                                         <li><a href="#" className="text-muted text-decoration-none">Shipping</a></li>
                                         <li><a href="#" className="text-muted text-decoration-none">Returns</a></li>
-                                        <li><a href="#" className="text-muted text-decoration-none">Contact Us</a></li>
+                                        <li><Link to="/contactus" className="text-muted text-decoration-none">Contact Us</Link></li>
                                     </ul>
                                 </div>
 
@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
                         {/* <div className="col-md-4">
                             <form className="d-flex">
                                 <input type="email" className="form-control" placeholder="Your email" />
-                                <button className="bg-dark"><img src="../../src/assets/images/arrow.png" alt="arrow" /></button>
+                                <button className="bg-dark"><img src="../../images/arrow.png" alt="arrow" /></button>
                             </form>
                         </div> */}
                     </div>

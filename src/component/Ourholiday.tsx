@@ -8,7 +8,7 @@ const Ourholiday: React.FC = () => {
               <div className="card h-100 border-0 shadow-sm">
                 <div className="row g-0 align-items-center">
                   <h6 className="card-title fw-bold pb-3">Our Holiday Gift Picks</h6>
-                  <img src="../../src/assets/images/product1.png" className="img-fluid rounded-start" alt="Gift 1" />
+                  <img src="./images/product1.png" className="img-fluid rounded-start" alt="Gift 1" />
                   <div className="card-body text-center">
                     <p className="card-text text-muted small">Timeless scents that turn heads with sophistication.</p>
                     <p className="readmore"><a href="#">Read More </a></p>
@@ -22,7 +22,7 @@ const Ourholiday: React.FC = () => {
                 <div className="row g-0 align-items-center">
 
                   <h6 className="card-title fw-bold  pb-3">For the Elegant</h6>
-                  <img src="../../src/assets/images/product2.png" className="img-fluid rounded-start" alt="Gift 1" />
+                  <img src="./images/product2.png" className="img-fluid rounded-start" alt="Gift 1" />
                   <div className="card-body text-center">
                     <p className="card-text text-muted small">Timeless scents that turn heads with sophistication.</p>
                     <p className="readmore"><a href="#">Read More </a></p>

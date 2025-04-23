@@ -5,7 +5,7 @@ import { Link, NavLink } from "react-router-dom";
 import { toggleCartVisibility } from "../store/slices/cartSlice";
 import Cart from "./Cart"; // Import the Cart component
 
-const indiaFlag = "./src/assets/images/india_flag.png";
+const indiaFlag = "./images/india_flag.png";
 
 const navLinks = [
   { label: "Home", href: "/" },

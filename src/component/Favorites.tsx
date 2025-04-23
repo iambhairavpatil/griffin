@@ -11,19 +11,19 @@ const Favorites: React.FC = () => {
               <div className="carousel-item active">
                 <div className="row g-3 justify-content-center">
                   <div className="col-6 col-md-3">
-                    <img src="./src/assets/images/slide1.png" className="d-block w-100" alt="Favorite 5" />
+                    <img src="./images/slide1.png" className="d-block w-100" alt="Favorite 5" />
                     <p className="mt-2 small">Feel the richness.</p>
                   </div>
                   <div className="col-6 col-md-3">
-                    <img src="./src/assets/images/slide4.png" className="d-block w-100" alt="Favorite 5" />
+                    <img src="./images/slide4.png" className="d-block w-100" alt="Favorite 5" />
                     <p className="mt-2 small">Feel the richness.</p>
                   </div>
                   <div className="col-6 col-md-3">
-                    <img src="./src/assets/images/w-1.webp" className="d-block w-100" alt="Favorite 5" />
+                    <img src="./images/w-1.webp" className="d-block w-100" alt="Favorite 5" />
                     <p className="mt-2 small">Feel the richness.</p>
                   </div>
                   <div className="col-6 col-md-3">
-                    <img src="./src/assets/images/men1.webp" className="d-block w-100" alt="Favorite 5" />
+                    <img src="./images/men1.webp" className="d-block w-100" alt="Favorite 5" />
                     <p className="mt-2 small">Feel the richness.</p>
                   </div>
                 </div>
@@ -32,19 +32,19 @@ const Favorites: React.FC = () => {
               <div className="carousel-item">
                 <div className="row g-3 justify-content-center">
                   <div className="col-6 col-md-3">
-                    <img src="./src/assets/images/slide1.png" className="d-block w-100" alt="Favorite 5" />
+                    <img src="./images/slide1.png" className="d-block w-100" alt="Favorite 5" />
                     <p className="mt-2 small">Feel the richness.</p>
                   </div>
                   <div className="col-6 col-md-3">
-                    <img src="./src/assets/images/category3.png" className="d-block w-100" alt="Favorite 5" />
+                    <img src="./images/category3.png" className="d-block w-100" alt="Favorite 5" />
                     <p className="mt-2 small">Feel the richness.</p>
                   </div>
                   <div className="col-6 col-md-3">
-                    <img src="./src/assets/images/men2.webp" className="d-block w-100" alt="Favorite 5" />
+                    <img src="./images/men2.webp" className="d-block w-100" alt="Favorite 5" />
                     <p className="mt-2 small">Feel the richness.</p>
                   </div>
                   <div className="col-6 col-md-3">
-                    <img src="./src/assets/images/men3.webp" className="d-block w-100" alt="Favorite 5" />
+                    <img src="./images/men3.webp" className="d-block w-100" alt="Favorite 5" />
                     <p className="mt-2 small">Feel the richness.</p>
                   </div>
                 </div>

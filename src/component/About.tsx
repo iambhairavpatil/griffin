@@ -2,9 +2,9 @@ import React from "react";
 
 const About: React.FC = () => {
   const links = [
-    { label: "Our Products", img: "./src/assets/images/slide4.png" },
-    { label: "Our Stores", img: "./src/assets/images/slide4.png" },
-    { label: "Careers", img: "./src/assets/images/slide4.png" },
+    { label: "Our Products", img: "./images/slide4.png" },
+    { label: "Our Stores", img: "./images/slide4.png" },
+    { label: "Careers", img: "./images/slide4.png" },
   ];
 
   const cards = [
@@ -19,7 +19,7 @@ const About: React.FC = () => {
       {/* Hero Section */}
       <section className="position-relative text-center" style={{ height: '460px' }}>
         <img
-          src="./src/assets/images/p6.jpg"
+          src="./images/p6.jpg"
           alt="Passion Perfume"
           className="w-100"
           style={{ height: '100%', objectFit: 'cover' }}
@@ -45,7 +45,7 @@ Our mission is to elevate your personal style through luxurious experiences that
             </div>
             <div className="col-md-6">
               <img
-                src="./src/assets/images/product1.png"
+                src="./images/product1.png"
                 alt="Perfume Bottles in Snow"
                 className="img-fluid rounded shadow"
               />
@@ -58,7 +58,7 @@ Our mission is to elevate your personal style through luxurious experiences that
       <section className="row g-0 align-items-center" style={{ background: '#E6DED8' }}>
   <div className="col-md-6">
     <img
-      src="./src/assets/images/slide4.png"
+      src="./images/slide4.png"
       alt="Model"
       className="img-fluid w-100"
       style={{ height: '400px', objectFit: 'cover' }}
@@ -74,7 +74,7 @@ Our mission is to elevate your personal style through luxurious experiences that
       {/* Middle Image Banner */}
       <section style={{ height: '500px' }}>
         <img
-          src="./src/assets/images/product1.png"
+          src="./images/product1.png"
           style={{ height: '100%', objectFit: 'cover' }}
           className="img-fluid w-100"
           alt="Perfumes in snow"
@@ -90,7 +90,7 @@ Our mission is to elevate your personal style through luxurious experiences that
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
           </div>
           <div className="col-md-6">
-            <img src="./src/assets/images/p6.jpg" className="img-fluid w-100" style={{ height: '400px', objectFit: 'cover' }} alt="Fragrance bottle" />
+            <img src="./images/p6.jpg" className="img-fluid w-100" style={{ height: '400px', objectFit: 'cover' }} alt="Fragrance bottle" />
           </div>
         </div>
       </section>

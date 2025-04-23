@@ -17,6 +17,7 @@ import MenCategory from './component/MenCategory';
 import TermsCondition from './component/TermsCondition';
 import PrivacyPolicy from './component/PrivacyPolicy';
 import Cart from './component/Cart';
+import ContactUs from './component/ContactUs';
 
 const routes = [
   { path: "/", element: <><Hero /><Product /><Newarrivals /><Favorites /><Testimonials /><Ourholiday /><Shipping /></> },
@@ -28,6 +29,7 @@ const routes = [
   { path: "/product/:id", element: <ProductDetails /> },
   { path: "/category/:categoryName", element: <ProductListing /> },
   { path: "/Cart", element: <Cart isCartVisible={false}/>},
+  { path: "/ContactUs", element: <ContactUs/>},
   { path: "*", element: <div>Page Not Found</div> }
 ];
 

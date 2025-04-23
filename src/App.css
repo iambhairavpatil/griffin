@@ -451,3 +451,10 @@ button {
   width: 100%;
   display: block;
 }
+
+.contact-content{
+  font-size: 16px;
+  p{
+    font-size: 16px;
+  }
+}

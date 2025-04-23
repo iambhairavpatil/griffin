@@ -106,7 +106,7 @@ const PeopleLike: React.FC = () => {
                                         >
                                             <div className="card h-100 border-0">
                                                 <img
-                                                    src="../src/assets/images/category6.png"
+                                                    src="../images/category6.png"
                                                     className="card-img-top rounded"
                                                     alt={`Product ${index + 1}`}
                                                     style={{
@@ -133,7 +133,7 @@ const PeopleLike: React.FC = () => {
                                         >
                                             <div className="card h-100 border-0">
                                                 <img
-                                                    src="../src/assets/images/new_arrival1.png"
+                                                    src="../images/new_arrival1.png"
                                                     className="card-img-top rounded"
                                                     alt={`Product ${index + 1}`}
                                                     style={{

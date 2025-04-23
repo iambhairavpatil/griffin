@@ -25,7 +25,7 @@ const About: React.FC = () => {
           style={{ height: '100%', objectFit: 'cover' }}
         />
         <div className="position-absolute bottom-0 start-0 w-100 bg-danger text-white text-start py-2 px-5">
-          <strong>About Us</strong>
+        <div className="container"><strong>About Us</strong></div>
         </div>
       </section>
 

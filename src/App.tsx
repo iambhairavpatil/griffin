@@ -18,10 +18,12 @@ import TermsCondition from './component/TermsCondition';
 import PrivacyPolicy from './component/PrivacyPolicy';
 import Cart from './component/Cart';
 import ContactUs from './component/ContactUs';
+import Returns from './component/Returns';
 
 const routes = [
   { path: "/", element: <><Hero /><Product /><Newarrivals /><Favorites /><Testimonials /><Ourholiday /><Shipping /></> },
   { path: "/TermsCondition", element: <TermsCondition /> },
+  { path: "/Returns", element: <Returns /> },
   { path: "/PrivacyPolicy", element: <PrivacyPolicy /> },
   { path: "/About", element: <About /> },
   { path: "/WomenCategory", element: <WomenCategory /> },

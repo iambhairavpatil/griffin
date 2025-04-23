@@ -32,7 +32,12 @@ const Footer: React.FC = () => {
                                         {/* <li><a href="#" className="text-muted text-decoration-none">FAQs</a></li> */}
                                         <li><a href="#" className="text-muted text-decoration-none">Shipping</a></li>
                                         <li><a href="#" className="text-muted text-decoration-none">Returns</a></li>
-                                        <li><Link to="/contactus" className="text-muted text-decoration-none">Contact Us</Link></li>
+                                        <li>
+                                            <Link
+                                                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                                                to="/contactus"
+                                                className="text-muted text-decoration-none">Contact Us</Link>
+                                        </li>
                                     </ul>
                                 </div>
 

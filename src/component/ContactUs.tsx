@@ -2,6 +2,8 @@ import { Line } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
 
 const ContactUs = () => {
+
+
     return (
         <div className="container mt-5 mb-5">
             <h1 className="text-center">Contact Us</h1>
